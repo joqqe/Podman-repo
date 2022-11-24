@@ -24,7 +24,8 @@ function menu {
             }
             if ($actions -eq 1) {
                 podman run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=yourStrong(!)Password" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
-                finish
+                Write-Host -ForegroundColor Magenta  "ConnectionString | Server=127.0.0.1,1433;Password=yourStrong(!)Password;User Id=SA;Initial Catalog={database-name};"
+				finish
             }
             menu
         }
